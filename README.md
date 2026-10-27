@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Patient Monitoring System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The Patient Monitoring System is a web-based application designed to help hospital nurses view patient monitor data in real time. The system consists of a React frontend, a Node.js backend, and a dedicated monitoring server that handles real-time communication.
 
-In the project directory, you can run:
+The project demonstrates how different components can work together to provide an interface for accessing patient information and displaying monitoring data.
 
-### `npm start`
+## System Architecture
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The system consists of three main components:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Frontend Client** – A React application that provides the user interface for viewing patient information and monitoring data.
+2. **Backend Server** – A Node.js and Express server responsible for handling API requests and managing application data.
+3. **Monitoring Server** – A dedicated server that uses WebSockets to deliver real-time monitoring updates to the frontend.
 
-### `npm test`
+## Technologies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- JavaScript
+- Node.js
+- Express.js
+- WebSockets
+- REST API
+- HTML and CSS
 
-### `npm run build`
+## Repositories
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project is divided into three repositories:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Client – React Frontend:**  
+  https://github.com/shugi-star/client_react_finalProject
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Main Backend Server:**  
+  https://github.com/shugi-star/server_react_finalProject
 
-### `npm run eject`
+- **Real-Time Monitoring Server:**  
+  https://github.com/shugi-star/monitor_demo_react
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Running the Project Locally
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Node.js and npm installed.
+- All three repositories cloned to your computer.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1. Start the Backend Server
 
-## Learn More
+Open a terminal in the backend project directory and run:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm install
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The backend is configured to use port `3001` by default.
 
-### Code Splitting
+### 2. Start the Monitoring Server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Open another terminal in the monitoring server project directory and run:
 
-### Analyzing the Bundle Size
+```bash
+npm install
+node server.js
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The monitoring server uses port `3002` and provides a WebSocket endpoint at:
 
-### Making a Progressive Web App
+```text
+ws://localhost:3002/ws/monitorsRealtime
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 3. Start the Frontend
 
-### Advanced Configuration
+Open another terminal in the frontend project directory and run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm install
+npm start
+```
 
-### Deployment
+The frontend is typically available at:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```text
+http://localhost:3000
+```
 
-### `npm run build` fails to minify
+## Notes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Start the backend and monitoring servers before using the frontend.
+- The frontend and monitoring server are configured to communicate with local backend services.
+- The project is a software demonstration and is not intended for clinical use without appropriate validation and testing.
